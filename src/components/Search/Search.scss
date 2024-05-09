@@ -1,0 +1,93 @@
+@import '../../styles/utils/mixins.scss';
+@import '../../styles/utils/variables.module.scss';
+
+.search {
+  height: 48px;
+  width: 100%;
+  position: relative;
+
+  @include on-desktop {
+    height: 64px;
+    width: auto;
+  }
+
+  &__input {
+    height: 100%;
+    width: 100%;
+    padding: 10px 30px 10px 12px;
+    color: var(--primary-color);
+    border: 1px solid var(--icon-color);
+    border-top: none;
+    background-color: var(--button-color-selected);
+    font-family: inherit;
+    font-weight: 600;
+
+    &:placeholder-shown {
+      text-overflow: ellipsis;
+    }
+  
+    &:focus {
+      border: 1px solid var(--primary-color);
+      border-top: none;
+      outline: none;
+    }
+  
+    @include on-desktop {
+      width: 250px;
+    }
+
+    &-icon {
+      display: flex;
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      right: 10px;
+      background: none;
+      border: 0;
+    }
+  }
+
+  &__results {
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    margin-top: 4px;
+    border: 1px solid var(--element-color);
+    background-color: var(--background-color);
+    z-index: 999;
+  }
+
+  &__product {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    padding: 10px 12px;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    font-weight: 500;
+    font-size: 12px;
+
+    @include hover(background-color, var(--hover-background-color));
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &-image {
+      height: 30px; 
+    }
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: auto;
+
+  @include on-desktop {
+    width: 250px;
+  }
+}

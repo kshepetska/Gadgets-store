@@ -1,0 +1,26 @@
+@import '../../styles/utils/mixins.scss';
+@import '../../styles/utils/variables.module.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+.favorites-page {
+  margin-bottom: 80px;
+}
+
+.favorites {
+  &__title {
+    margin: 0;
+  }
+
+  &__quantity {
+    margin-top: 8px;
+    margin-bottom: 32px;
+    color: var(--secondary-color);
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+  }
+}

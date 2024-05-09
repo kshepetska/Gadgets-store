@@ -1,0 +1,70 @@
+@import '../../styles/utils/mixins.scss';
+
+.product-slider-container {
+  &__title {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 128%;
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: var(--primary-color)
+  }
+  &__wrapper-title-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  &__btn--wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+.custom-prev-button,
+.custom-next-button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--svg-border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--svg-bg-color);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all $effect-duration;
+
+  svg {
+    color: var(--primary-color);
+  }
+
+  &:hover {
+    background-color: var(--svg-bg-hover-color);
+    border: 1px solid var(--svg-border-hover-color);
+  }
+
+  &:disabled {
+    border: 1px solid var(--svg-disabled-color);
+    pointer-events: none;
+    background-color: var(--background-color);
+
+    svg {
+      color: var(--svg-disabled-color);
+    }
+  }
+}
+
+.products-swiper .swiper-slide {
+  width: 237px;
+
+  @include on-tablet {
+    width: 237px;
+  }
+
+  @include on-desktop {
+    width: 272px;
+  }
+}

@@ -1,0 +1,202 @@
+@import '../../styles/utils/mixins.scss';
+@import '../../styles/utils/variables.module.scss';
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--element-color);
+  box-sizing: border-box;
+  transition: all $effect-duration;
+
+  @include on-small-tablet {
+    min-width: 212px;
+  }
+
+  @include on-medium-tablet {
+    width: 100%;
+  }
+
+  &:hover {
+    box-shadow: 0px 2px 16px 4px var(--card-box-shadow-hover);
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10%;
+    transition: all $effect-duration ease-in-out;
+
+    &:hover {
+      scale: 1.1;
+    }
+
+    @include on-tablet {
+      padding-bottom: 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 32px;
+    background-color: var(--card-layout-bg-color);
+
+    @include on-tablet {
+      padding-bottom: 32px;
+    }
+  }
+
+  &__image {
+    margin: 0 auto;
+    margin-bottom: 24px;
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    padding: 5vh;
+    padding-top: 0;
+    object-fit: contain;
+
+    &:hover {
+      width: 103%;
+    }
+
+    @include on-tablet {
+      padding: 0;
+      height: 196px;
+      width: 224px;
+    }
+  }
+
+  &__name {
+    height: 42px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    text-decoration: none;
+  }
+
+  &__prices {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 150%;
+    text-decoration: line-through;
+    color: var(--secondary-color);
+
+    &--discount {
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 150%;
+      color: var(--primary-color);
+    }
+  }
+
+  &__breakline {
+    margin: 8px 0 16px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--element-color);
+  }
+
+  &__button {
+    &--container {
+      display: grid;
+      grid-template-columns: 1fr 40px;
+      column-gap: 8px;
+      margin-top: 16px;
+      height: 40px;
+    }
+
+    &--add {
+      grid-column: 1 / 2;
+      padding: 0;
+      background-color: var(--button-color);
+      border: none;
+      color: var(--card-add-color);
+      font-weight: 400;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all $effect-duration;
+
+      &:hover {
+        box-shadow: $hover-shadow;
+        background: var(--button-add-hover-bg-color);
+      }
+    }
+
+    &--remove {
+      grid-column: 1 / 2;
+      padding: 0;
+      background-color: var(--button-color-selected);
+      border: 1px solid var(--element-color);
+      color: var(--button-color-text);
+      font-family: 'Mont';
+      font-weight: 400;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all $effect-duration;
+    }
+
+    &--favourite {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-column: 2 / -1;
+      box-sizing: border-box;
+      width: 40px;
+      border: none;
+      background-color: var(--favourite-button-color);
+      border: 1px solid var(--icon-color);
+      padding: 0;
+      overflow: hidden;
+
+      &:hover {
+        background-color: var(--button-hover-bg-color);
+      }
+
+      @include hover(border, 1px solid var(--button-hover-color));
+    }
+  }
+
+  &__characteristics {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.characteristics {
+  font-size: 12px;
+
+  &--name {
+    color: var(--card-characteristic-name-color);
+  }
+
+  &--value {
+    color: var(--card-characteristic-value-color);
+  }
+}
+
+.screen,
+.capacity,
+.ram {
+  display: flex;
+  justify-content: space-between;
+}

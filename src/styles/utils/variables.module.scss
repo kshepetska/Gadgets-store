@@ -1,0 +1,144 @@
+:root {
+  --primary-color: #313237;
+  --secondary-color: #89939a;
+  --icon-color: #b4bdc3;
+  --element-color: #e2e6e9;
+  --hover-background-color: #fafbfc;
+  --card-add-color: #fff;
+  --white-color: #4c3f3f;
+  --green-color: #27ae60;
+  --red-color: #eb5757;
+  --background-color: #fff;
+  --button-color: #313237;
+  --button-color-selected: #fff;
+  --button-color-text: #27ae60;
+  --favourite-button-color: #fff;
+  --card-layout-bg-color: #fff;
+  --card-characteristic-name-color: #313237;
+  --card-characteristic-value-color: #89939a;
+  --button-pagination-color: #313237;
+  --button-hover-color: #313237;
+  --button-hover-bg-color: #fff;
+  --button-add-hover-bg-color: #313237;
+  --pagination-active-border-color: #313237;
+  --pagination-disabled-bg-color: #fff;
+  --cart-product-disabled-color: #e2e6e9;
+  --cart-product-border-color: #b4bdc3;
+  --product-price-bg-color: #fff;
+  --product-price-selected-bg-color: #313237;
+  --product-price-border-color: #e2e6e9;
+  --product-price-border-hover-color: #313237;
+  --product-price-hover-bg-color: #fff;
+  --header-border-color: #e2e6e9;
+  --footer-bg-color: #fff;
+  --footer-border-color: #e2e6e9;
+  --footer-hover-border-color: #313237;
+  --footer-hover-bg-color: #fff;
+  --mesage-color: #dcf8c6;
+  --home-slider-pagination: gray;
+  --home-slider-pagination-active: gray;
+  --modal-bg-color: #fff;
+  --modal-button-color: #fff;
+  --modal-button-color-text: #000;
+  --modal-button-hover-color: #fff;
+  --modar-border-color: #75767F;
+  --modal-button-yes-bg-color: #000;
+  --modal-button-yes-hover-color: #e9e9e9;
+  --modar-border-yes-color: #b8bac3;
+  --modal-button-yes-color-text: #fff;
+  --skeleton-background-lighter: #e2e6e9;
+  --skeleton-background-darker: #b4bdc3;
+  --svg-disabled-color: #b4bdc3;
+  --svg-bg-color: #fff;
+  --svg-bg-hover-color: #fff;
+  --svg-border-color: #b4bdc3;
+  --svg-border-hover-color: #313237;
+  --chat-border-color: rgb(220, 220, 220);
+  --chat-logo-color: #313237;
+  --card-box-shadow-hover: #0000001a;
+}
+
+[data-theme='dark'] {
+  --primary-color: #f1f2f9;
+  --secondary-color: #75767f;
+  --icon-color: #323542;
+  --element-color: #161827;
+  --hover-background-color: #323542;
+  --card-add-color: #f1f2f9;
+  --white-color: #f1f2f9;
+  --green-color: #27ae60;
+  --red-color: #eb5757;
+  --background-color: #0f1121;
+  --button-color: #905bff;
+  --button-color-selected: #323542;
+  --button-color-text: #f1f2f9;
+  --favourite-button-color: #323542;
+  --card-layout-bg-color: #161827;
+  --card-characteristic-name-color: #75767f;
+  --card-characteristic-value-color: #f1f2f9;
+  --button-pagination-color: #905bff;
+  --button-hover-color: #323542;
+  --button-hover-bg-color: #4a4d58;
+  --button-add-hover-bg-color: #a378ff;
+  --pagination-active-border-color: #3b3e4a;
+  --pagination-disabled-bg-color: #0f1121;
+  --cart-product-disabled-color: #4a4d58;
+  --cart-product-border-color: #323542;
+  --product-price-bg-color: #0f1121;
+  --product-price-selected-bg-color: #f1f2f9;
+  --product-price-border-color: #4a4d58;
+  --product-price-border-hover-color: #4a4d58;
+  --product-price-hover-bg-color: #4a4d58;
+  --header-border-color: #323542;
+  --footer-bg-color: #323542;
+  --footer-border-color: #323542;
+  --footer-hover-border-color: #323542;
+  --footer-hover-bg-color: #4a4d58;
+  --home-slider-pagination: #fff;
+  --home-slider-pagination-active: #F1F2F9;
+  --modal-bg-color: #212430;
+  --modal-button-color: #000;
+  --modal-button-color-text: #fff;
+  --modal-button-hover-color: #c0c1c7;
+  --modar-border-color: #b8bac3;
+  --modal-button-yes-bg-color: #000;
+  --modal-button-yes-hover-color: #e9e9e9;
+  --modar-border-yes-color: #b8bac3;
+  --modal-button-yes-color-text: #fff;
+  --home-slider-pagination-active: #f1f2f9;
+  --skeleton-background-lighter: #323542;
+  --skeleton-background-darker: #212430;
+  --svg-disabled-color: #4a4d58;
+  --svg-bg-color: #323542;
+  --svg-bg-hover-color: #4a4d58;
+  --svg-border-color: #323542;
+  --svg-border-hover-color: #323542;
+  --chat-border-color: #4A4D58;
+  --chat-logo-color: #e9e9e9;
+  --card-box-shadow-hover: #ffffff1a;
+}
+
+$small-tablet-min-width: 640px;
+$medium-tablet-min-width: 768px;
+$tablet-min-width: 640px;
+$desktop-min-width: 1200px;
+$effect-duration: 0.3s;
+$hover-shadow: 0 3px 13px 0 rgba(23, 32, 49, 0.4);
+$animation-skeleton: skeleton-loading 1s linear infinite alternate;
+
+:export {
+  primaryColor: var(--primary-color);
+  iconColor: var(--icon-color);
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+svg {
+  color: var(--primary-color);
+}

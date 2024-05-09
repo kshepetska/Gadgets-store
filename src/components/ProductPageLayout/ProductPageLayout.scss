@@ -1,0 +1,123 @@
+@import '../../styles/utils/mixins.scss';
+@import '../../styles/utils/variables.module.scss';
+
+.product__title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 800;
+  font-size: 32px;
+}
+
+.product {
+  &__title, &__price {
+    color: var(--primary-color);
+  }
+
+  &__grid {
+    @include page-grid;
+  }
+
+  &__path,
+  &__back,
+  &__title,
+  &__images,
+  &__about,
+  &__specs,
+  &__also-like,
+  &__price {
+    grid-column: 1 / 5;
+  }
+
+  &__back {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__images {
+    margin-bottom: 16px;
+    height: 353px;
+  }
+
+  &__specs,
+  &__about,
+  &__also-like,
+  &__price {
+    margin-bottom: 56px;
+  }
+
+  @include on-tablet {
+    &__path,
+    &__back,
+    &__title,
+    &__specs,
+    &__about,
+    &__also-like {
+      grid-column: 1 / 13;
+    }
+
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__images {
+      grid-column: 1 / span 7;
+      margin-bottom: 0;
+      height: 287px;
+    }
+
+    &__about {
+      margin-block: 64px;
+    }
+
+    &__price {
+      grid-column: 8 / span 5;
+      margin-bottom: 0;
+    }
+
+    &__specs,
+    &__also-like {
+      margin-bottom: 64px;
+    }
+  }
+
+  @include on-desktop {
+    &__path {
+      grid-column: 1 / 25;
+    }
+
+    &__back {
+      grid-column: 1 / 4;
+    }
+
+    &__title {
+      grid-column: 1 / 25;
+    }
+
+    &__images {
+      grid-column: 1 / span 12;
+      height: 464px;
+    }
+    &__price {
+      margin-left: 48px;
+      grid-column: 13 / span 12;
+    }
+
+    &__about {
+      grid-column: 1 / span 12;
+      margin-top: 80px;
+    }
+
+    &__specs {
+      grid-column: 13 / span 12;
+      margin-top: 80px;
+    }
+
+    &__also-like {
+      grid-column: 1 / 25;
+      margin-bottom: 80px;
+    }
+  }
+}

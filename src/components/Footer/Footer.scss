@@ -1,0 +1,130 @@
+@import '../../styles/utils/mixins.scss';
+@import '../../styles/utils/variables.module.scss';
+
+.footer {
+  display: block;
+  text-align: left;
+  padding-block: 32px;
+  padding-inline: 16px;
+  border-top: 1px solid var(--element-color);
+
+  @include on-tablet {
+    padding-inline: 32px;
+    height: 96px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  @include on-desktop {
+    padding-inline: 152px;
+  }
+
+  &--fixed {
+    margin-top: auto;
+    position: relative;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include on-desktop {
+      margin-inline: auto;
+      max-width: 1200px;
+    }
+  }
+
+  &__logo-wrapper {
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__logo {
+    display: block;
+    height: 32px;
+    position: relative;
+    background-color: var(--background-color) !important;
+    color: (--primary-color);
+  }
+
+  &__links-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 14px;
+      margin-top: 0;
+      margin-inline: auto;
+    }
+
+    @include on-desktop {
+      gap: 106px;
+    }
+  }
+
+  &__link {
+    font-family: 'Mont';
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 92%;
+    letter-spacing: 0.04em;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+
+    @include hover(color, var(--primary-color));
+
+    &.active {
+      background-color: transparent;
+      color: var(--primary-color);
+    }
+
+    &--top {
+      margin-bottom: 0px;
+      border: 1px solid var(--footer-border-color);
+      background-color: var(--footer-bg-color);
+      padding: 8px;
+      transition: all $effect-duration;
+
+      &:hover {
+        background-color: var(--footer-hover-bg-color);
+        border: 1px solid var(--footer-hover-border-color);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__anchor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 16px;
+
+    @include on-tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__label {
+    padding-block: 8.5px;
+    margin-right: 16px;
+    color: var(--secondary-color);
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,99 @@
+@import '../../styles/utils/mixins.scss';
+@import '../../styles/utils/variables.module.scss';
+
+.disable-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
+.menu {
+  background-color: var(--background-color);
+  left: 0;
+  top: 49px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+  overflow-y: hidden;
+
+  @include on-medium-tablet {
+    display: none;
+  }
+
+  &__navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 24px;
+    list-style: none;
+    flex-direction: column;
+    row-gap: 16px;
+  
+    &__link {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-bottom: 8px;
+  
+      font-size: 12px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: var(--secondary-color);
+  
+      @include hover(color, var(--primary-color));
+  
+      &--active {
+        color: var(--primary-color);
+  
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          height: 3px;
+          width: 100%;
+          background-color: var(--primary-color);
+        }
+      }
+    }
+  
+    &__icons {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 64px;
+    }
+  
+    &__icon {
+      &__wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        &--favourites {
+          border-color: var(--element-color);
+          border-style: solid;
+          border-width: 1px 1px 0 0;
+        }
+  
+        &--cart {
+          border: var(--element-color);
+          border-style: solid;
+          border-width: 1px 0 0 0;
+        }
+      }
+    }
+  }
+}
+
+@include on-tablet {
+  .nav__icons {
+    display: none;
+  } 
+}
+

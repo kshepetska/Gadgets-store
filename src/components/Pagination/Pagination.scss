@@ -1,0 +1,52 @@
+@import '../../styles/utils/variables.module.scss';
+@import '../../styles/utils/mixins.scss';
+
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  &__wrapper {
+    display: flex;
+    column-gap: 16px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
+
+  &__buttons {
+    display: flex;
+    column-gap: 8px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+    border: 1px solid var(--element-color);
+    background-color: var(--card-layout-bg-color);
+    color: var(--primary-color);
+
+    @include hover(border, 1px solid var(--button-hover-color));
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--nav {
+      border: 1px solid var(--icon-color);
+      background-color: var(--button-color-selected);
+
+      &:disabled {
+        pointer-events: none;
+        background-color: var(--pagination-disabled-bg-color);
+      }
+    }
+
+    &--active {
+      background-color: var(--button-pagination-color);
+      color: var(--card-add-color);
+      border: 1px solid var(--pagination-active-border-color);
+    }
+  }
+}

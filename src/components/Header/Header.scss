@@ -1,0 +1,249 @@
+@import '../../styles/utils/mixins.scss';
+@import '../../styles/utils/variables.module.scss';
+
+.header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 48px;
+  border-bottom: 1px solid var(--header-border-color);
+  box-sizing: border-box;
+  font-weight: 800;
+  z-index: 999; // just to be sure
+  opacity: 1;
+  background-color: var(--background-color);
+
+  &__right {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+
+    @include on-tablet {
+      padding-left: 16px;
+    }
+
+    @include on-desktop {
+      padding-left: 0;
+    }
+  }
+
+  &__home {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    &.active {
+      background-color: transparent;
+    }
+  }
+
+  &__logo {
+    padding-left: 16px;
+    background-color: var(--background-color);
+    color: (--primary-color);
+    width: 64px;
+    height: 21px;
+
+    @include on-tablet {
+      padding-left: 0;
+    }
+
+    @include on-desktop {
+      width: 80px;
+      height: 28px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu {
+    height: 16px;
+
+    &__toggler {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      margin: 0;
+      padding: 0;
+      overflow: visible;
+      background: transparent;
+      height: 48px;
+      width: 48px;
+
+      border-left: 1px solid var(--header-border-color);
+    }
+  }
+
+  &__cart,
+  &__favourites {
+    display: none;
+  }
+
+  @include on-medium-tablet {
+    .header__menu__toggler {
+      display: none;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+    border: 0;
+    border-left: 1px solid var(--header-border-color);
+    background-color: transparent;
+
+    @include on-desktop {
+      height: 64px;
+      width: 64px;
+    }
+  }
+
+  &__switcher:hover {
+    cursor: pointer;
+  }
+
+  &__close {
+    border-bottom: 1px solid var(--icon-color);
+    background-color: var(--background-color);
+  }
+}
+
+.navbar {
+  display: none;
+  padding-left: 32px;
+  gap: 32px;
+  list-style: none;
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 48px;
+
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+
+    @include hover(color, var(--primary-color));
+
+    &--active {
+      color: var(--primary-color);
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 3px;
+        width: 100%;
+        background-color: var(--primary-color);
+        transition: width $effect-duration ease-in-out;
+        animation: grow-border $effect-duration ease-in-out forwards;
+      }
+
+      @keyframes grow-border {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    position: relative;
+    display: none;
+
+    height: 48px;
+    width: 48px;
+    border-left: 1px solid var(--header-border-color);
+
+    @include on-medium-tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include on-desktop {
+      display: flex;
+      height: 64px;
+      width: 64px;
+    }
+  }
+}
+
+.wrapper {
+  @include on-tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@include on-medium-tablet {
+  .header {
+    &__cart,
+    &__favourites {
+      display: inline;
+    }
+  }
+
+  .navbar {
+    display: flex;
+  }
+}
+
+@include on-desktop {
+  .navbar {
+    gap: 64px;
+    padding-left: 48px;
+
+    &__link {
+      height: 64px;
+    }
+  }
+
+  .header {
+    min-height: 64px;
+    padding: 0 0 0 24px;
+  }
+}
+
+.search-wrapper {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  @include on-medium-tablet {
+    width: 300px;
+    left: auto;
+    right: 0;
+    z-index: 999;
+  }
+
+  @include on-desktop {
+    position: static;
+    width: auto;
+    button {
+      display: none;
+    }
+  }
+}
